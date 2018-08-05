@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1437238737 source:c:\users\shaheer\documents\projects\rizwan\menu0.c
+
+1437572633 source:c:\users\shaheer\documents\projects\rizwan\main.c
+	<stdio.h>
+	<conio.h>
+	"rizzu\T2GCC.h"
+	"rizzu\grphcs.h"
+	"rizzu\menu0.c"
+	"rizzu\menu1.c"
+	"rizzu\menu2.c"
+	"rizzu\menu3.c"
+	"rizzu\menu4.c"
+	"rizzu\menu5.c"
+	"rizzu\quit.c"
+
+1437548095 c:\users\shaheer\documents\projects\rizwan\rizzu\t2gcc.h
+	<windows.h>
+
+1437548874 c:\users\shaheer\documents\projects\rizwan\rizzu\grphcs.h
+
+1437549223 c:\users\shaheer\documents\projects\rizwan\rizzu\menu0.c
+
+1437549801 c:\users\shaheer\documents\projects\rizwan\rizzu\menu1.c
+
+1437549228 c:\users\shaheer\documents\projects\rizwan\rizzu\menu2.c
+
+1437560453 c:\users\shaheer\documents\projects\rizwan\rizzu\menu3.c
+	"mystr.h"
+
+1437560940 c:\users\shaheer\documents\projects\rizwan\rizzu\mystr.h
+	"pattern.c"
+
+1437547936 c:\users\shaheer\documents\projects\rizwan\rizzu\pattern.c
+	"alphaxy.h"
+
+1437548355 c:\users\shaheer\documents\projects\rizwan\rizzu\alphaxy.h
+
+1437572678 c:\users\shaheer\documents\projects\rizwan\rizzu\menu4.c
+	<stdlib.h>
+	"sort.c"
+	"range.c"
+	"find&replace.c"
+
+1437549303 c:\users\shaheer\documents\projects\rizwan\rizzu\menu5.c
+
+1437549234 c:\users\shaheer\documents\projects\rizwan\rizzu\quit.c
+
+1437572015 c:\users\shaheer\documents\projects\rizwan\rizzu\sort.c
+
+1437571274 c:\users\shaheer\documents\projects\rizwan\rizzu\range.c
+
+1437572574 c:\users\shaheer\documents\projects\rizwan\rizzu\find&replace.c
+
