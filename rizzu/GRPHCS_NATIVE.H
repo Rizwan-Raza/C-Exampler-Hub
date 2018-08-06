@@ -6,18 +6,40 @@
 #ifndef T2GCC_H_INCLUDED
     #include "..\rizzu\T2GCC.H"
 #endif // T2GCC_H_INCLUDED
-/*void drawBox(int,int,int,int);
-void drawXline111(int,int,int);
-void drawBox2(int,int,int,int);
+#define BLUE 9
+#define RED 12
+#define BLACK 0
+#define CYAN 11
+#define GREEN 10
+#define RED 12
+#define BLACK 0
+#define CYAN 11
+#define YELLOW 14
+/*void drawBox(int,int,int,int); -- done --
+void drawXline111(int,int,int); -- done --
+void drawBox2(int,int,int,int); -- done --
 void drawXline212(int,int,int);
 void drawYline112(int,int,int);
-void drawbgcolor(int,int,int,int);
-void drawMatrix(int,int,int,int,int);
-void drawDeterm(int,int,int,int,int);
-void drawSet();
-void drawMenu();
-void clrpnl(int,int,int,int);
+void drawbgcolor(int,int,int,int); -- done --
+void drawMatrix(int,int,int,int,int); -- done --
+void drawDeterm(int,int,int,int,int); -- done --
+void drawSet(); -- done --
+void drawMenu(); -- done --
+void clrpnl(int,int,int,int); -- done --
 */
+void drawBall(int x,int y,int fc,int bc)
+{
+    textcolor(fc);
+    textbackground(bc);
+    gotoxy(x,y);
+    printf(" %c%c",219,219);
+    gotoxy(x,y+1);
+    printf("%c%c%c%c",219,219,219,219);
+    gotoxy(x,y+2);
+    printf("%c%c%c%c",219,219,219,219);
+    gotoxy(x,y+3);
+    printf(" %c%c",219,219);
+}
 void drawTline2222(int x,int y,int col,int w,int fc,int bc)
 {
 	int j;
@@ -251,11 +273,9 @@ void setConSize(int x,int y)
     snprintf(str, sizeof(str), "mode con:cols=%d lines=%d",x,y);
     system(str);
 }
-void drawBox(int x,int y,int lenght,int breadth,int bc,int fc)
+void drawBox(int x,int y,int lenght,int breadth)
 {
 	int i,j;
-	textcolor(fc);
-	textbackground(bc);
 	gotoxy(x,y);                      //left top corner.
 	printf("%c",218);                //left top corner.
 	gotoxy(x+lenght+1,y);             //right top corner.
@@ -296,11 +316,9 @@ void drawXline111(int x,int y,int lenght,int bc,int fc)
 	}
 }
 //Function to draw box using (x,y) coordinates and length and breadth of box
-void drawBox2(int x,int y,int lenght,int breadth,int bc,int fc)
+void drawBox2(int x,int y,int lenght,int breadth)
 {
 	int i,j;
-	textcolor(fc);
-	textbackground(bc);
 	gotoxy(x,y);                      //left top corner.
 	printf("%c",201);                //left top corner.
 	gotoxy(x+lenght+1,y);             //right top corner.
@@ -324,12 +342,11 @@ void drawBox2(int x,int y,int lenght,int breadth,int bc,int fc)
 		printf("%c",186);
 	}
 }
+
 //Function to draw horizontal line using (x,y) coordinates and length of the line.
-void drawXline212(int x,int y,int lenght,int bc,int fc)
+void drawXline212(int x,int y,int lenght)
 {
 	int i;
-	textcolor(fc);
-	textbackground(bc);
 	gotoxy(x,y);                   //left corner.
 	printf("%c",199);             //left corner.
 	gotoxy(x+lenght+1,y);          //right corner.
@@ -341,11 +358,9 @@ void drawXline212(int x,int y,int lenght,int bc,int fc)
 	}
 }
 //Function to draw vertical line using (x,y) coordinates and length of the line.
-void drawYline112(int x,int y,int height,int bc,int fc)
+void drawYline112(int x,int y,int height)
 {
 	int i;
-	textcolor(fc);
-	textbackground(bc);
 	gotoxy(x,y);                   //left corner.
 	printf("%c",194);             //left corner.
 	gotoxy(x,y+height+1);          //right corner.
@@ -356,11 +371,9 @@ void drawYline112(int x,int y,int height,int bc,int fc)
 		printf("%c",179);
 	}
 }
-void drawbgcolor(int x,int y,int height,int width,int bc,int fc)
+void drawbgcolor(int x,int y,int height,int width)
 {
 	int i,j;
-	textcolor(fc);
-	textbackground(bc);
 	for(i=0;i<height;i++)
 	{
 		for(j=0;j<width;j++)
@@ -370,11 +383,9 @@ void drawbgcolor(int x,int y,int height,int width,int bc,int fc)
 		}
 	}
 }
-void drawMatrix(int x,int y,int row,int col,int wdt,int bc,int fc)
+void drawMatrix(int x,int y,int row,int col,int wdt)
 {
 	int i;
-	textcolor(fc);
-	textbackground(bc);
 	gotoxy(x,y);
 	printf("%c",218);
 	gotoxy(x,y+col+1);
@@ -391,11 +402,9 @@ void drawMatrix(int x,int y,int row,int col,int wdt,int bc,int fc)
 		printf("%c",179);
 	}
 }
-void drawDeterm(int x,int y,int row,int col,int wdt,int bc,int fc)
+void drawDeterm(int x,int y,int row,int col,int wdt)
 {
 	int i;
-	textcolor(fc);
-	textbackground(bc);
 	for(i=0;i<=col+1;i++)
 	{
 		gotoxy(x,y+i);
@@ -407,18 +416,25 @@ void drawDeterm(int x,int y,int row,int col,int wdt,int bc,int fc)
 void drawMenu()
 {
 	clrscr();
-	drawBox2(1,1,78,22,11,1);
-	drawXline212(1,5,78,11,1);
-	drawbgcolor(2,2,78,3,1,1);
-	textcolor(1);
+	textbackground(11);
+	textcolor(1);	
+	drawBox2(1,1,78,22);
+	drawXline212(1,5,78);
+	textbackground(1);
+	drawbgcolor(2,2,78,3);
+	textcolor(15);	
 }
 void drawSet()
-{	clrscr();
-	drawBox2(1,1,78,22,11,1);
-	drawXline212(1,5,78,11,1);
-	drawYline112(50,5,18,11,1);
-	drawbgcolor(2,2,78,3,1,1);
-	textcolor(1);
+{
+	textbackground(11);
+	textcolor(1);	
+	clrscr();
+	drawBox2(1,1,78,22);
+	drawXline212(1,5,78);
+	drawYline112(50,5,18);
+	textbackground(1);
+	drawbgcolor(2,2,78,3);
+	textcolor(15);	
 }
 void clrpnl(int x,int xl,int y,int yl)
 {

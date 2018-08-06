@@ -301,6 +301,32 @@ void drawBox(int x,int y,int lenght,int breadth,int bc,int fc)
 		printf("%c",179);
 	}
 }
+void drawBoxNative(int x,int y,int lenght,int breadth)
+{
+	int i,j;
+	gotoxy(x,y);                      //left top corner.
+	printf("%c",218);                //left top corner.
+	gotoxy(x+lenght+1,y);             //right top corner.
+	printf("%c",191);                //right top corner.
+	gotoxy(x,y+breadth+1);            //left bottom corner.
+	printf("%c",192);                //left bottom corner.
+	gotoxy(x+lenght+1,y+breadth+1);   //right bottom corner.
+	printf("%c",217);                //right bottom corner.
+	for(i=x+1;i<x+lenght+1;i++)
+	{
+		gotoxy(i,y);
+		printf("%c",196);
+		gotoxy(i,y+breadth+1);
+		printf("%c",196);
+	}
+	for(j=y+1;j<y+breadth+1;j++)
+	{
+		gotoxy(x,j);
+		printf("%c",179);
+		gotoxy(x+lenght+1,j);
+		printf("%c",179);
+	}
+}
 //Function to draw line using (x,y) coordinates and length of the line.
 void drawXline111(int x,int y,int lenght,int bc,int fc)
 {
@@ -323,6 +349,33 @@ void drawBox2(int x,int y,int lenght,int breadth,int bc,int fc)
 	int i,j;
 	textcolor(fc);
 	textbackground(bc);
+	gotoxy(x,y);                      //left top corner.
+	printf("%c",201);                //left top corner.
+	gotoxy(x+lenght+1,y);             //right top corner.
+	printf("%c",187);                //right top corner.
+	gotoxy(x,y+breadth+1);            //left bottom corner.
+	printf("%c",200);                //left bottom corner.
+	gotoxy(x+lenght+1,y+breadth+1);   //right bottom corner.
+	printf("%c",188);                //right bottom corner.
+	for(i=x+1;i<x+lenght+1;i++)
+	{
+		gotoxy(i,y);
+		printf("%c",205);
+		gotoxy(i,y+breadth+1);
+		printf("%c",205);
+	}
+	for(j=y+1;j<y+breadth+1;j++)
+	{
+		gotoxy(x,j);
+		printf("%c",186);
+		gotoxy(x+lenght+1,j);
+		printf("%c",186);
+	}
+}
+//Function to draw box using (x,y) coordinates and length and breadth of box
+void drawBox2Native(int x,int y,int lenght,int breadth)
+{
+	int i,j;
 	gotoxy(x,y);                      //left top corner.
 	printf("%c",201);                //left top corner.
 	gotoxy(x+lenght+1,y);             //right top corner.

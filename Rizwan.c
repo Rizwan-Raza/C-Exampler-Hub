@@ -6,7 +6,7 @@
 #define BRDR 15
 #define TXET 0
 #define MENU 12
-#include"rizzu\grphcs.h"
+#include"rizzu\grphcs_native.h"
 #define MATWIDTH 5
 int main();
 #include"rizzu\menu0.c"
